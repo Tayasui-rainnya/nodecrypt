@@ -1,6 +1,12 @@
 import {
 	defineConfig
 } from 'vite';
+
+/**
+ * Vite build configuration.
+ * Includes an explicit Chrome 61 compilation target so generated JS/CSS
+ * avoid newer syntax that this browser cannot parse natively.
+ */
 export default defineConfig({
 	// Root directory
 	// 根目录
@@ -14,6 +20,12 @@ export default defineConfig({
 	// Build options
 	// 构建选项
 	build: {
+		// JS target for legacy browser compatibility
+		// 兼容旧版浏览器的 JS 编译目标
+		target: 'chrome61',
+		// CSS target for legacy browser compatibility
+		// 兼容旧版浏览器的 CSS 编译目标
+		cssTarget: 'chrome61',
 		// Output directory
 		// 输出目录
 		outDir: '../dist',
